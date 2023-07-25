@@ -5,9 +5,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Albums </title>
 </head>
 <body>
-    <h1 th:text="${albumName}">ALBUM NAME HERE</h1>
+    <h1 th:text="${title}">ALBUM TITLE HERE</h1>
+    <p th:text="${artist}">ARTIST HERE</p>
+    <p th:text="${songCount}">SONGCOUNT HERE</p>
+    <p th:text="${length}">LENGTH HERE</p>
+    <img alt="album image" src="${imageUrl}"/>
 </body>
 </html>
