@@ -20,11 +20,11 @@ public class TeachingController {
     
     @GetMapping("/album")
     public String getAlbumPage(Model m) {
-        m.addAttribute("title");
-        m.addAttribute("artist");
-        m.addAttribute("songCount");
-        m.addAttribute("length");
-        return "album.html";
+        m.addAttribute("title", "Sadnecessary");
+        m.addAttribute("artist", "Milky Chance");
+        m.addAttribute("songCount", "14");
+        m.addAttribute("length", "3,333");
+        return "albums.html";
     }
     
 }
