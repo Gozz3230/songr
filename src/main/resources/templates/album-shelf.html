@@ -8,18 +8,18 @@
 <h1>Albums</h1>
 
 <!--stores come from our controller. GET method -->
-<!--<ul th:each="albumShelf : ${shelves}">-->
-<!--    &lt;!&ndash;notice the string we create within thymeleaf&ndash;&gt;-->
-<!--    <li th:text="'Shelf name ' + ${albumShelf.name}">shelf name</li>-->
-<!--    <li th:text="'Average time on album ' + ${albumShelf.averageTimeOnAlbum}"></li>-->
+<ul th:each="albumShelf : ${shelves}">
+<!--notice the string we create within thymeleaf-->
+    <li th:text="'Shelf name ' + ${albumShelf.name}">shelf name</li>
+    <li th:text="'Average time on album ' + ${albumShelf.averageTimeOnAlbum}"></li>
 <!--    &lt;!&ndash; ADDS SMALL FORM TO INCORPORATE DELETE BUTTON FOR EACH STORE &ndash;&gt;-->
 <!--    &lt;!&ndash; NOTE: the albumShelf's id is concatenated to the end of the path to be unique for each... it is accessed in the controller via path variable &ndash;&gt;-->
 <!--    <form th:action="'/shelves/delete/' + ${albumShelf.id}" th:method="delete">-->
 <!--        <input type="submit" value="Delete Shelf">-->
 <!--    </form>-->
-<!--</ul>-->
+</ul>
 
-<!--&lt;!&ndash;return a single store from a GET method&ndash;&gt;-->
+<!--return a single store from a GET method&ndash-->
 <!--<li th:text="${shelfName}">shelf name</li>-->
 <!--<li th:text="${shelfSales}">shelf sales</li>-->
 
