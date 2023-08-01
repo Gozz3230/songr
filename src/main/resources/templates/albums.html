@@ -5,15 +5,28 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdeliver.net/npm/@picocss/pico@1/css/pico.min.css">
     <title>Albums</title>
 </head>
 <body>
-<main>
+<main class="container">
     <h1>Albums</h1>
     <ul th:each="album : ${albums}">
-        <li th:text="${album.name}">ALBUM NAME</li>
+        <li>
+            <a th:href="'/' + ${stand.id}" th:text="${album.name}">ALBUM NAME</a>
+        </li>
     </ul>
-</main>
 
+    <form action="/create" method="POST">
+        <fieldset>
+            <legend>Create Album</legend>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name">
+            <label for="average-album-length">Average Album Length</label>
+            <input type ="number" name="averageAlbumLength" id="average-album-length">
+            <input type="submit" value="SAVE">
+        </fieldset>
+    </form>
+</main>
 </body>
 </html>
