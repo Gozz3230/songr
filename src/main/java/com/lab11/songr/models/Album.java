@@ -51,7 +51,7 @@ public class Album {
     public void setAverageAlbumlength(Integer averageAlbumlength) {
       this.averageAlbumlength = averageAlbumlength;
     }
-  }
+
 
   @Override
   public String toString() {
