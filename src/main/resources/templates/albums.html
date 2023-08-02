@@ -1,32 +1,45 @@
 <!doctype html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.jsdeliver.net/npm/@picocss/pico@1/css/pico.min.css">
-    <title>Albums</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Add Album</title>
 </head>
 <body>
-<main class="container">
-    <h1>Albums</h1>
-    <ul th:each="album : ${albums}">
-        <li>
-            <a th:href="'/' + ${stand.id}" th:text="${album.name}">ALBUM NAME</a>
-        </li>
-    </ul>
-
-    <form action="/create" method="POST">
-        <fieldset>
-            <legend>Create Album</legend>
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name">
-            <label for="average-album-length">Average Album Length</label>
-            <input type ="number" name="averageAlbumLength" id="average-album-length">
-            <input type="submit" value="SAVE">
-        </fieldset>
+<div class="form-container">
+    <form action="/add-album" method="POST" class="row g-3">
+        <div class="col-md-6">
+            <label for="inputTitle" class="form-label">Album Title</label>
+            <input type="text" class="form-control" id="inputTitle" name="title">
+        </div>
+        <div class="col-md-6">
+            <label for="inputArtist" class="form-label">Album Artist</label>
+            <input type="text" class="form-control" id="inputArtist" name="artist">
+        </div>
+        <div class="col-12">
+            <label for="inputSongCount" class="form-label">Song Count</label>
+            <input type="number" class="form-control" id="inputSongCount" name="songCount">
+        </div>
+        <div class="col-12">
+            <label for="inputLength" class="form-label">Length (Minutes)</label>
+            <input type="number" class="form-control" id="inputLength" name="length">
+        </div>
+        <div class="col-md-6">
+            <label for="inputImageUrl" class="form-label">ImageUrl</label>
+            <input type="text" class="form-control" id="inputImageUrl" name="imageUrl">
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
     </form>
-</main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 </body>
 </html>
