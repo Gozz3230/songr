@@ -1,17 +1,46 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Albums </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/album.css">
+    <title>Add Album</title>
 </head>
 <body>
-    <h1 th:text="${title}">ALBUM TITLE HERE</h1>
-    <p th:text="${artist}">ARTIST HERE</p>
-    <p th:text="${songCount}">SONGCOUNT HERE</p>
-    <p th:text="${length}">LENGTH HERE</p>
-    <img src="/images/Sadnecessary.jpg" alt="album image" />
+<div class="form-container">
+    <form action="/add-album" method="POST" class="row g-3">
+        <div class="col-md-6">
+            <label for="inputTitle" class="form-label">Album Title</label>
+            <input type="text" class="form-control" id="inputTitle" name="title">
+        </div>
+        <div class="col-md-6">
+            <label for="inputArtist" class="form-label">Album Artist</label>
+            <input type="text" class="form-control" id="inputArtist" name="artist">
+        </div>
+        <div class="col-12">
+            <label for="inputSongCount" class="form-label">Song Count</label>
+            <input type="number" class="form-control" id="inputSongCount" name="songCount">
+        </div>
+        <div class="col-12">
+            <label for="inputLength" class="form-label">Length (Minutes)</label>
+            <input type="number" class="form-control" id="inputLength" name="length">
+        </div>
+        <div class="col-md-6">
+            <label for="inputImageUrl" class="form-label">ImageUrl</label>
+            <input type="text" class="form-control" id="inputImageUrl" name="imageUrl">
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 </body>
 </html>
