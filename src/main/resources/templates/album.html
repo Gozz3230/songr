@@ -11,15 +11,15 @@
     <title th:text="${album.title}">Album Title</title>
 </head>
 <body>
-<header class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <h1 th:text="${album.title}">Album</h1>
-</header>
+<!--<header class="navbar navbar-expand-lg navbar-dark bg-dark">-->
+<!--    <h1 th:text="${album.title}">Album</h1>-->
+<!--</header>-->
 <main>
-    <img th:src="@{${album.imageUrl}}" alt="Album Image">
 
 
     <div class="track-list">
-        <h2 th:text="${album.title} + ' Track List'">Track List</h2>
+        <img th:src="@{${album.imageUrl}}" alt="Album Image">
+        <h2 th:style="${album.title} ? 'color: white;'" th:text="${album.title} + ' Track List'">Track List</h2>
         <ul th:each="song: ${album.songs}" class="list-group">
             <li th:text="'Track-' + ${song.trackNumber} + ':&nbsp;&nbsp;&nbsp;&nbsp;' + ${song.title} + '&nbsp;&nbsp;&nbsp;&nbsp;Length(seconds):&nbsp;' + ${song.length}"
                 class="list-group-item list-group-item-primary">Track
@@ -47,7 +47,7 @@
                 <input type="number" class="form-control" id="inputTrackNumber" name="trackNumber">
             </div>
             <div class="col-12">
-                <button type="submit" class="btn btn-outline-primary">Submit</button>
+                <button type="submit" class="btn btn-dark">Submit</button>
             </div>
         </form>
     </div>
